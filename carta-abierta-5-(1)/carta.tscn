@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b7oyfeq54li6v"]
+
+[ext_resource type="Script" uid="uid://c1eylhatratu4" path="res://carta.gd" id="1_nqtiw"]
+
+[node name="Carta" type="Control" unique_id=356499522]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nqtiw")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=795859130]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0.19780988, 0.11226743, 0.3167804, 1)
+
+[node name="Elemento" type="Label" parent="." unique_id=197563987]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 43.0
+text = "🔥 Fuego"
+
+[node name="Valor" type="Label" parent="." unique_id=2145324405]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 123.0
+text = "7"
+
+[node name="BandasColor" type="ColorRect" parent="." unique_id=2019506862]
+custom_minimum_size = Vector2(150, 15)
+layout_mode = 0
+offset_top = 185.0
+offset_right = 150.0
+offset_bottom = 225.0
+mouse_filter = 2
+color = Color(0.9098039, 0.21176471, 0.2901961, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=988374935]

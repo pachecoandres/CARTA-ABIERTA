@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://b4kpiw0y8maii"]
+
+[ext_resource type="Script" uid="uid://bxi7opeynar1o" path="res://juego1.gd" id="1_t7wl2"]
+[ext_resource type="FontFile" uid="uid://hqtmjbx30ukq" path="res://PokerKings-Regular.ttf" id="2_f3rly"]
+[ext_resource type="StyleBox" uid="uid://cvsd5wepoocsq" path="res://new_style_box_flat.tres" id="3_6gsi4"]
+[ext_resource type="StyleBox" uid="uid://duty1ttkkvqi4" path="res://new_style_box_flat_pressed.tres" id="4_86wbs"]
+[ext_resource type="StyleBox" uid="uid://dni8u3sepswhs" path="res://new_style_box_flat_hover.tres" id="5_r55b2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7wl2"]
+resource_name = "idle"
+
+[node name="juego1" type="Node2D" unique_id=1794315461]
+script = ExtResource("1_t7wl2")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=184873227]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.101960786, 0.12156863, 0.20784314, 1)
+
+[node name="BtnVolver" type="Button" parent="." unique_id=216039715]
+offset_left = 1818.0
+offset_top = 1022.0
+offset_right = 1878.0
+offset_bottom = 1053.0
+theme_override_fonts/font = ExtResource("2_f3rly")
+theme_override_styles/normal_mirrored = ExtResource("3_6gsi4")
+theme_override_styles/pressed_mirrored = ExtResource("4_86wbs")
+theme_override_styles/hover_mirrored = ExtResource("5_r55b2")
+text = "Volver"
+
+[node name="VentanaConfirmar" type="CanvasLayer" parent="." unique_id=372987212]
+visible = false
+
+[node name="Fondo" type="ColorRect" parent="VentanaConfirmar" unique_id=1461560847]
+offset_left = 326.0
+offset_top = 174.0
+offset_right = 826.0
+offset_bottom = 474.0
+color = Color(0.101960786, 0.18431373, 0.3529412, 1)
+
+[node name="Label" type="Label" parent="VentanaConfirmar" unique_id=463901390]
+offset_left = 376.0
+offset_top = 224.0
+offset_right = 416.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0.9607843, 0.77254903, 0.25882354, 1)
+theme_override_font_sizes/font_size = 29
+text = "¿Seguro que quieres salir?"
+
+[node name="BtnSi" type="Button" parent="VentanaConfirmar" unique_id=566425304]
+custom_minimum_size = Vector2(150, 50)
+offset_left = 376.0
+offset_top = 374.0
+offset_right = 384.0
+offset_bottom = 382.0
+theme_override_fonts/font = ExtResource("2_f3rly")
+theme_override_styles/normal_mirrored = ExtResource("3_6gsi4")
+theme_override_styles/pressed_mirrored = ExtResource("4_86wbs")
+theme_override_styles/hover_mirrored = ExtResource("5_r55b2")
+text = "Si"
+
+[node name="BtnNo" type="Button" parent="VentanaConfirmar" unique_id=1092123174]
+custom_minimum_size = Vector2(150, 50)
+offset_left = 576.0
+offset_top = 374.0
+offset_right = 584.0
+offset_bottom = 382.0
+theme_override_fonts/font = ExtResource("2_f3rly")
+theme_override_styles/normal_mirrored = ExtResource("3_6gsi4")
+theme_override_styles/pressed_mirrored = ExtResource("4_86wbs")
+theme_override_styles/hover_mirrored = ExtResource("5_r55b2")
+text = "No"
+
+[node name="LabelResultado" type="Label" parent="." unique_id=649217639]
+offset_left = 810.0
+offset_top = 50.0
+offset_right = 850.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 32
+text = "..."
+
+[node name="LabelVictoriasJ" type="Label" parent="." unique_id=1252103208]
+offset_left = 20.0
+offset_top = 400.0
+offset_right = 123.0
+offset_bottom = 423.0
+text = "Tus Victorias:"
+
+[node name="LabelCartasJ" type="Label" parent="." unique_id=1263137492]
+offset_left = 20.0
+offset_top = 440.0
+offset_right = 60.0
+offset_bottom = 463.0
+text = "``"
+
+[node name="LabelVictoriasCPU" type="Label" parent="." unique_id=1425487168]
+offset_left = 1667.0
+offset_top = 142.0
+offset_right = 1734.0
+offset_bottom = 165.0
+text = "Victorias"
+
+[node name="LabelCartasCPU" type="Label" parent="." unique_id=1306834989]
+offset_left = 1600.0
+offset_top = 440.0
+offset_right = 1640.0
+offset_bottom = 463.0
+text = "``"
+
+[node name="VentanaVictoria" type="CanvasLayer" parent="." unique_id=454161868]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="VentanaVictoria" unique_id=428498506]
+custom_minimum_size = Vector2(600, 300)
+offset_left = 276.0
+offset_top = 174.0
+offset_right = 876.0
+offset_bottom = 474.0
+color = Color(0.050980393, 0.06666667, 0.09019608, 1)
+
+[node name="LabelMensaje" type="Label" parent="VentanaVictoria/ColorRect" unique_id=920011750]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 224.0
+offset_right = 316.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0.9607843, 0.77254903, 0.25882354, 1)
+
+[node name="BtnOk" type="Button" parent="VentanaVictoria/ColorRect" unique_id=661403365]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 374.0
+offset_right = 500.0
+offset_bottom = 405.0
+theme_override_fonts/font = ExtResource("2_f3rly")
+theme_override_styles/normal_mirrored = ExtResource("3_6gsi4")
+theme_override_styles/pressed_mirrored = ExtResource("4_86wbs")
+theme_override_styles/hover_mirrored = ExtResource("5_r55b2")
+text = "Volver al menú"
+
+[node name="BtnRejugar" type="Button" parent="VentanaVictoria/ColorRect" unique_id=43144734]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 374.0
+offset_right = 295.0
+offset_bottom = 405.0
+theme_override_fonts/font = ExtResource("2_f3rly")
+theme_override_styles/normal = ExtResource("3_6gsi4")
+theme_override_styles/normal_mirrored = ExtResource("3_6gsi4")
+theme_override_styles/pressed_mirrored = ExtResource("4_86wbs")
+theme_override_styles/hover_mirrored = ExtResource("5_r55b2")
+text = "Nueva partida"
+
+[node name="SubPantalla" type="SubViewportContainer" parent="." unique_id=12851760]
+offset_left = 439.0
+offset_top = 263.0
+offset_right = 1525.0
+offset_bottom = 775.0
+
+[node name="SubViewport" type="SubViewport" parent="SubPantalla" unique_id=617024535]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Salon" type="Node2D" parent="SubPantalla/SubViewport" unique_id=184279821]
+
+[node name="Fondo" type="Sprite2D" parent="SubPantalla/SubViewport/Salon" unique_id=621936407]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubPantalla/SubViewport/Salon" unique_id=19846095]
+sprite_frames = SubResource("SpriteFrames_t7wl2")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="SubPantalla/SubViewport/Salon" unique_id=2044809185]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubPantalla/SubViewport/Salon" unique_id=1239673847]
+
+[node name="Label" type="Label" parent="SubPantalla/SubViewport/Salon/CanvasLayer" unique_id=274180669]
+offset_right = 40.0
+offset_bottom = 23.0

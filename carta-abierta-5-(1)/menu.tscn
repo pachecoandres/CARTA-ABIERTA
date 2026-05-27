@@ -1,0 +1,679 @@
+[gd_scene format=3 uid="uid://bquducn4jtyj7"]
+
+[ext_resource type="Script" uid="uid://cb8bwpl7x4vxc" path="res://menu.gd" id="1_dwrpx"]
+[ext_resource type="Script" uid="uid://bl1rjibhd31i8" path="res://gpu_particles_2d.gd" id="1_iqepy"]
+[ext_resource type="Script" uid="uid://dxmrlop5thnn2" path="res://node_2d.gd" id="1_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://2fhv5lnq7q0v" path="res://carta_empatia.png" id="1_ouk20"]
+[ext_resource type="Texture2D" uid="uid://br7u31478wn07" path="res://carta_denuncia.png" id="3_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://bmfma1bnw78yg" path="res://carta_apoyo.png" id="4_kk3ma"]
+[ext_resource type="Texture2D" uid="uid://ij2lp4bdvv8c" path="res://carta_acoso.png" id="5_nrnbx"]
+[ext_resource type="Texture2D" uid="uid://cecwwaf30e8t8" path="res://carta_poder_especial.png" id="6_iqepy"]
+[ext_resource type="Texture2D" uid="uid://bgor0a33pu25v" path="res://bt1.png" id="6_w25hu"]
+[ext_resource type="FontFile" uid="uid://hqtmjbx30ukq" path="res://PokerKings-Regular.ttf" id="7_h1wq0"]
+[ext_resource type="Texture2D" uid="uid://chteayw3g5uvh" path="res://bt2.png" id="7_td6mg"]
+[ext_resource type="Script" uid="uid://beg4aqtwvccid" path="res://titulo.gd" id="8_kk3ma"]
+[ext_resource type="Script" uid="uid://bq87x26n7eihu" path="res://v_box_container.gd" id="9_nrnbx"]
+[ext_resource type="AudioStream" uid="uid://b437qpk8wuqgg" path="res://when-the-devil-falls-in-love.ogg" id="11_h1wq0"]
+[ext_resource type="StyleBox" uid="uid://cvsd5wepoocsq" path="res://new_style_box_flat.tres" id="12_oxnod"]
+[ext_resource type="StyleBox" uid="uid://duty1ttkkvqi4" path="res://new_style_box_flat_pressed.tres" id="13_gd0jp"]
+[ext_resource type="StyleBox" uid="uid://dni8u3sepswhs" path="res://new_style_box_flat_hover.tres" id="14_4ndjb"]
+[ext_resource type="Texture2D" uid="uid://dg4yvhts3jaby" path="res://pixil-frame-0 (3).png" id="16_3ls4m"]
+[ext_resource type="Texture2D" uid="uid://bl2idjepecmtp" path="res://chica1.png" id="17_5h80m"]
+[ext_resource type="Texture2D" uid="uid://c5upyt7utrmj8" path="res://pixil-frame-0 (4).png" id="18_w25hu"]
+
+[sub_resource type="Curve" id="Curve_4hy44"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.1456597, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ytr4m"]
+curve = SubResource("Curve_4hy44")
+
+[sub_resource type="Gradient" id="Gradient_l48gv"]
+offsets = PackedFloat32Array(0.46209386, 0.599278)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ecwwl"]
+gradient = SubResource("Gradient_l48gv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kk3ma"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(960, 1, 1)
+gravity = Vector3(0, 98, 0)
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_ecwwl")
+alpha_curve = SubResource("CurveTexture_ytr4m")
+turbulence_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7jxm"]
+bg_color = Color(0.101960786, 0.1764706, 0.2901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wriu"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhgcl"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="FontVariation" id="FontVariation_dwrpx"]
+base_font = ExtResource("7_h1wq0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tnp7"]
+bg_color = Color(0.101960786, 0.18431373, 0.3529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlonj"]
+bg_color = Color(0.101960786, 0.18431373, 0.3529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxnod"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gd0jp"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5jqm"]
+bg_color = Color(0.101960786, 0.18431373, 0.3529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lmdq"]
+bg_color = Color(0.101960786, 0.18431373, 0.3529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ls4m"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h80m"]
+bg_color = Color(0.050980393, 0.105882354, 0.16470589, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w25hu"]
+bg_color = Color(0.16470589, 0.27058825, 0.4392157, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td6mg"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guify"]
+bg_color = Color(0.050980393, 0.105882354, 0.16470589, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oil5j"]
+bg_color = Color(0.16470589, 0.27058825, 0.4392157, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uog0"]
+bg_color = Color(0.043137256, 0.015686275, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5x1w"]
+bg_color = Color(0.050980393, 0.105882354, 0.16470589, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkpqm"]
+bg_color = Color(0.16470589, 0.27058825, 0.4392157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Menu" type="Node2D" unique_id=589148396]
+script = ExtResource("1_dwrpx")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2057548041]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.044460215, 0.01721614, 0.15589404, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=969048248]
+position = Vector2(960, 0)
+emitting = false
+amount = 200
+lifetime = 35.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_kk3ma")
+script = ExtResource("1_iqepy")
+
+[node name="VentanaJugar" type="CanvasLayer" parent="." unique_id=848207779]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="VentanaJugar" unique_id=1486621639]
+custom_minimum_size = Vector2(300, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -450.0
+offset_right = 650.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jxm")
+
+[node name="BotonesContainer" type="Node2D" parent="VentanaJugar/PanelContainer" unique_id=1749917728]
+
+[node name="Titulo" type="Label" parent="VentanaJugar/PanelContainer/BotonesContainer" unique_id=435055845]
+offset_left = 392.02
+offset_top = 100.0
+offset_right = 908.02
+offset_bottom = 163.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.79607844, 0.67058825, 0, 1)
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 50
+text = "SELECCIONA MODO"
+horizontal_alignment = 1
+
+[node name="Trio_Ganador" type="Button" parent="VentanaJugar/PanelContainer/BotonesContainer" unique_id=616438789]
+custom_minimum_size = Vector2(400, 120)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 450.0
+offset_top = 250.0
+offset_right = 850.0
+offset_bottom = 374.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7wriu")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+icon = ExtResource("6_w25hu")
+icon_alignment = 1
+
+[node name="Resistencia" type="Button" parent="VentanaJugar/PanelContainer/BotonesContainer" unique_id=2060600809]
+custom_minimum_size = Vector2(400, 120)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 450.0
+offset_top = 400.0
+offset_right = 850.0
+offset_bottom = 524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhgcl")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+icon = ExtResource("7_td6mg")
+icon_alignment = 1
+
+[node name="Cerrar" type="Button" parent="VentanaJugar/PanelContainer/BotonesContainer" unique_id=974426548]
+offset_left = 500.0
+offset_top = 700.0
+offset_right = 800.0
+offset_bottom = 775.0
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_styles/normal = ExtResource("12_oxnod")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "Cerrar"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1129033895]
+script = ExtResource("1_nrnbx")
+
+[node name="Carta1" type="Sprite2D" parent="Node2D" unique_id=1698886802]
+position = Vector2(720.05, 1310)
+rotation = -0.38397244
+texture = ExtResource("1_ouk20")
+
+[node name="Carta2" type="Sprite2D" parent="Node2D" unique_id=1263583033]
+z_index = 1
+position = Vector2(840.05, 1310)
+rotation = -0.19198622
+texture = ExtResource("3_ecwwl")
+
+[node name="Carta3" type="Sprite2D" parent="Node2D" unique_id=453409740]
+z_index = 3
+position = Vector2(960.05, 1310)
+texture = ExtResource("4_kk3ma")
+
+[node name="Carta4" type="Sprite2D" parent="Node2D" unique_id=1495716107]
+z_index = 3
+position = Vector2(1080.05, 1310)
+rotation = 0.19198622
+texture = ExtResource("5_nrnbx")
+
+[node name="Carta5" type="Sprite2D" parent="Node2D" unique_id=1703115295]
+z_index = 4
+position = Vector2(1200.05, 1310)
+rotation = 0.38397244
+texture = ExtResource("6_iqepy")
+
+[node name="Titulo" type="Label" parent="." unique_id=955151037]
+offset_left = 752.5
+offset_top = 112.0
+offset_right = 1167.5
+offset_bottom = 365.0
+pivot_offset = Vector2(960, 540)
+theme_override_colors/font_color = Color(0.7979007, 0.67108697, 7.70092e-07, 1)
+theme_override_fonts/font = SubResource("FontVariation_dwrpx")
+theme_override_font_sizes/font_size = 100
+text = "  CARTA
+ABIERTA"
+script = ExtResource("8_kk3ma")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1406069815]
+custom_minimum_size = Vector2(400, 0)
+offset_left = 760.0
+offset_top = 430.0
+offset_right = 1160.0
+offset_bottom = 730.0
+theme_override_constants/separation = 20
+script = ExtResource("9_nrnbx")
+
+[node name="Jugar" type="Button" parent="VBoxContainer" unique_id=982849607]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tnp7")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "JUGAR"
+
+[node name="Opciones" type="Button" parent="VBoxContainer" unique_id=571383267]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rlonj")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "OPCIONES"
+
+[node name="VentanaOpciones" type="CanvasLayer" parent="VBoxContainer/Opciones" unique_id=2044566766]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Opciones/VentanaOpciones" unique_id=999310774]
+custom_minimum_size = Vector2(800, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -450.0
+offset_right = 650.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jxm")
+
+[node name="BotonesContainer" type="Node2D" parent="VBoxContainer/Opciones/VentanaOpciones/PanelContainer" unique_id=789553741]
+
+[node name="Opciones" type="Label" parent="VBoxContainer/Opciones/VentanaOpciones/PanelContainer/BotonesContainer" unique_id=182713055]
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 792.0
+offset_bottom = 163.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.79607844, 0.67058825, 0, 1)
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 50
+text = "OPCIONES"
+horizontal_alignment = 1
+
+[node name="Silenciar" type="Button" parent="VBoxContainer/Opciones/VentanaOpciones/PanelContainer/BotonesContainer" unique_id=458597250]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = 313.0
+offset_right = 900.0
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxnod")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "Silenciar Musica"
+
+[node name="Cerrar" type="Button" parent="VBoxContainer/Opciones/VentanaOpciones/PanelContainer/BotonesContainer" unique_id=1279753611]
+offset_left = 400.0
+offset_top = 650.0
+offset_right = 900.0
+offset_bottom = 750.0
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_gd0jp")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "Cerrar"
+
+[node name="Label" type="Label" parent="VBoxContainer/Opciones/VentanaOpciones/PanelContainer/BotonesContainer" unique_id=1782057710]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 340.0
+offset_top = 510.0
+offset_right = 959.0
+offset_bottom = 552.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Musica: when the devil falls in love · Hakdo"
+
+[node name="Instrucciones" type="Button" parent="VBoxContainer" unique_id=2022162942]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t5jqm")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "INSTRUCCIONES"
+
+[node name="VentanaInstrucciones" type="CanvasLayer" parent="VBoxContainer/Instrucciones" unique_id=1161716251]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Instrucciones/VentanaInstrucciones" unique_id=1589426079]
+custom_minimum_size = Vector2(800, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -450.0
+offset_right = 650.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jxm")
+
+[node name="BotonesContainer" type="Node2D" parent="VBoxContainer/Instrucciones/VentanaInstrucciones/PanelContainer" unique_id=997058686]
+
+[node name="Instrucciones" type="Label" parent="VBoxContainer/Instrucciones/VentanaInstrucciones/PanelContainer/BotonesContainer" unique_id=863125090]
+offset_left = 430.0
+offset_top = 50.0
+offset_right = 871.0
+offset_bottom = 113.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.79607844, 0.67058825, 0, 1)
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 50
+text = "INSTRUCCIONES"
+horizontal_alignment = 1
+
+[node name="Modo 1" type="Label" parent="VBoxContainer/Instrucciones/VentanaInstrucciones/PanelContainer/BotonesContainer" unique_id=906343073]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 140.0
+offset_right = 610.0
+offset_bottom = 735.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Modo 1 — Duelo de cartas
+
+Ambos jugadores roban y juegan una
+carta al mismo tiempo. El triángulo
+decide quién gana cada duelo:
+→Denuncia vence Acoso
+→ Acoso vence Empatía 
+→ Empatía vence Denuncia. 
+Si el elemento es igual, gana el número
+más alto (2–12). Gana el primero en
+coleccionar 3 victorias con 3 colores
+distintos, ya sea con 3 elementos
+diferentes o 3 del mismo elemento."
+
+[node name="Modo 2" type="Label" parent="VBoxContainer/Instrucciones/VentanaInstrucciones/PanelContainer/BotonesContainer" unique_id=2032690546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 681.0
+offset_top = 140.0
+offset_right = 1265.0
+offset_bottom = 735.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Modo 2 — Tablero de red social
+
+Usa tus cartas para proteger a los 
+personajes del tablero antes de que 
+el rival los llene de acoso. Empatía
+restaura bienestar, Denuncia 
+elimina acoso permanentemente, 
+Apoyo protege personajes, Acoso los 
+daña y Poder especial activa habilidades
+únicas. Gana quien limpie el tablero de
+acoso primero."
+
+[node name="Cerrar" type="Button" parent="VBoxContainer/Instrucciones/VentanaInstrucciones/PanelContainer/BotonesContainer" unique_id=359491060]
+offset_left = 400.0
+offset_top = 760.0
+offset_right = 900.0
+offset_bottom = 860.0
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_gd0jp")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "Cerrar"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=1521702621]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8lmdq")
+theme_override_styles/pressed = ExtResource("13_gd0jp")
+theme_override_styles/hover = ExtResource("14_4ndjb")
+text = "SALIR"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1965781780]
+stream = ExtResource("11_h1wq0")
+autoplay = true
+parameters/looping = true
+
+[node name="VentanaPersonajes" type="CanvasLayer" parent="." unique_id=1250696222]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="VentanaPersonajes" unique_id=1483409217]
+custom_minimum_size = Vector2(800, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -450.0
+offset_right = 650.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7jxm")
+
+[node name="VBox" type="VBoxContainer" parent="VentanaPersonajes/PanelContainer" unique_id=713016844]
+layout_mode = 2
+
+[node name="LblTitulo" type="Label" parent="VentanaPersonajes/PanelContainer/VBox" unique_id=626034445]
+layout_mode = 2
+
+[node name="HBox" type="Control" parent="VentanaPersonajes/PanelContainer/VBox" unique_id=1981766144]
+layout_mode = 2
+
+[node name="BtnIzquierda" type="Button" parent="VentanaPersonajes/PanelContainer/VBox/HBox" unique_id=1771344719]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 248.0
+offset_top = 281.0
+offset_right = 715.0
+offset_bottom = 625.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ls4m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5h80m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w25hu")
+icon = ExtResource("16_3ls4m")
+
+[node name="SpritePersonaje" type="Sprite2D" parent="VentanaPersonajes/PanelContainer/VBox/HBox" unique_id=339626338]
+position = Vector2(656, 321)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_5h80m")
+
+[node name="BtnDerecha" type="Button" parent="VentanaPersonajes/PanelContainer/VBox/HBox" unique_id=705570470]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 864.0
+offset_top = 289.0
+offset_right = 1331.0
+offset_bottom = 633.0
+scale = Vector2(0.4, 0.4)
+theme_override_styles/normal = SubResource("StyleBoxFlat_td6mg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_guify")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oil5j")
+icon = ExtResource("18_w25hu")
+
+[node name="BtnConfirmar" type="Button" parent="VentanaPersonajes/PanelContainer/VBox/HBox" unique_id=971751106]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 617.0
+offset_right = 824.0
+offset_bottom = 717.0
+theme_override_fonts/font = ExtResource("7_h1wq0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8uog0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k5x1w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rkpqm")
+text = "CONFIRMAR"
